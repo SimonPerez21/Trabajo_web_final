@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+  .card.shadow
+    .card-body
+      h2.card-title Nuevo Paciente
+
+      form(action="/pacientes/crear" method="POST")
+        .mb-3
+          label.form-label Nombre
+          input.form-control(type="text" name="nombre" required)
+        .mb-3
+          label.form-label Apellido
+          input.form-control(type="text" name="apellido" required)
+        .mb-3
+          label.form-label DNI
+          input.form-control(type="text" name="dni" required)
+        .mb-3
+          label.form-label Fecha de nacimiento
+          input.form-control(type="date" name="fecha_nacimiento" required)
+        .mb-3
+          label.form-label Sexo
+          select.form-select(name="sexo" required)
+            option(value="") Seleccione
+            option(value="M") Masculino
+            option(value="F") Femenino
+            option(value="Otro") Otro
+        .mb-3
+          label.form-label Dirección
+          input.form-control(type="text" name="direccion")
+        .mb-3
+          label.form-label Teléfono
+          input.form-control(type="text" name="telefono")
+        .mb-3
+          label.form-label Contacto de emergencia
+          input.form-control(type="text" name="contacto_emergencia")
+        .mb-3
+          label.form-label Teléfono de emergencia
+          input.form-control(type="text" name="telefono_emergencia")
+        button.btn.btn-success(type="submit") Guardar

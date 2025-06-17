@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  .card.shadow
+    .card-body
+      h2.card-title Nueva Internación
+
+      form(action="/internaciones/crear" method="POST")
+        .mb-3
+          label.form-label Admisión
+          select.form-select(name="admision_id" required)
+            option(value="") Seleccione una admisión
+            each adm in admisiones
+              option(value=adm.id) #{adm.nombre} #{adm.apellido}
+
+        .mb-3
+          label.form-label Cama
+          select.form-select(name="cama_id" required)
+            option(value="") Seleccione una cama
+            each cama in camas
+              option(value=cama.id) Hab. #{cama.habitacion} - Cama #{cama.numero}
+
+        .mb-3
+          label.form-label Fecha de inicio
+          input.form-control(type="datetime-local" name="fecha_inicio" required)
+
+        button.btn.btn-success(type="submit") Guardar
