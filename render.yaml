@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: internacion-web
-    env: node
-    buildCommand: npm install
-    startCommand: node app.js
-    plan: free
